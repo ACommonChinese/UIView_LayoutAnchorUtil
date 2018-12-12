@@ -1,9 +1,8 @@
 # UIView-BMLayoutAnchorUtil
-An UIView category for add/delete/update/fetch constraint conveniently, based on NSLayoutAnchor
+**An UIView category for add/delete/update/fetch constraint conveniently, based on NSLayoutAnchor**
 
 
-
-The system UIView can get it's constrains BY view.constraints, but maybe it's useless in real project.
+The system UIView can get it's constrains by view.constraints, but maybe it's useless in real project.
 
 As usually, we want to get a constraint that matches an option, such as left constraint, top constraint and so on. We want update/delete...
 
