@@ -11,12 +11,9 @@
 
 @implementation BMLayoutYAxisAnchor
 
-- (NSLayoutConstraint *)anchorWithOffsetToAnchor:(NSLayoutYAxisAnchor *)otherAnchor {
+- (NSLayoutDimension *)anchorWithOffsetToAnchor:(NSLayoutYAxisAnchor *)otherAnchor {
     BMLayoutYAxisAnchor *systemAnchor = (BMLayoutYAxisAnchor *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
 }
 
 - (NSLayoutConstraint *)constraintEqualToSystemSpacingBelowAnchor:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {

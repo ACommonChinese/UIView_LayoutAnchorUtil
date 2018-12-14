@@ -37,12 +37,9 @@
     return constraint;
 }
 
-- (NSLayoutConstraint *)anchorWithOffsetToAnchor:(NSLayoutXAxisAnchor *)otherAnchor {
+- (NSLayoutDimension *)anchorWithOffsetToAnchor:(NSLayoutXAxisAnchor *)otherAnchor {
     BMLayoutXAxisAnchor *systemAnchor = (BMLayoutXAxisAnchor *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
 }
 
 @end
