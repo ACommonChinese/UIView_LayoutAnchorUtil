@@ -25,51 +25,51 @@
 
 #pragma mark - anchors
 
-- (BMLayoutLeading *)bm_leadingAnchor {
+- (BMLayoutLeading *)bm_leading {
     return (BMLayoutLeading *)[self getAnchorForClass:BMLayoutLeading.class selector:_cmd];
 }
 
-- (BMLayoutTrailing *)bm_trailingAnchor {
+- (BMLayoutTrailing *)bm_trailing {
     return (BMLayoutTrailing *)[self getAnchorForClass:BMLayoutTrailing.class selector:_cmd];
 }
 
-- (BMLayoutLeft *)bm_leftAnchor {
+- (BMLayoutLeft *)bm_left {
     return (BMLayoutLeft *)[self getAnchorForClass:BMLayoutLeft.class selector:_cmd];
 }
 
-- (BMLayoutRight *)bm_rightAnchor {
+- (BMLayoutRight *)bm_right {
     return (BMLayoutRight *)[self getAnchorForClass:BMLayoutRight.class selector:_cmd];
 }
 
-- (BMLayoutTop *)bm_topAnchor {
+- (BMLayoutTop *)bm_top {
     return (BMLayoutTop *)[self getAnchorForClass:BMLayoutTop.class selector:_cmd];
 }
 
-- (BMLayoutBottom *)bm_bottomAnchor {
+- (BMLayoutBottom *)bm_bottom {
     return (BMLayoutBottom *)[self getAnchorForClass:BMLayoutBottom.class selector:_cmd];
 }
 
-- (BMLayoutWidth *)bm_widthAnchor {
+- (BMLayoutWidth *)bm_width {
     return (BMLayoutWidth *)[self getAnchorForClass:BMLayoutWidth.class selector:_cmd];
 }
 
-- (BMLayoutHeight *)bm_heightAnchor {
+- (BMLayoutHeight *)bm_height {
     return (BMLayoutHeight *)[self getAnchorForClass:BMLayoutHeight.class selector:_cmd];
 }
 
-- (BMLayoutCenterX *)bm_centerXAnchor {
+- (BMLayoutCenterX *)bm_centerX {
     return (BMLayoutCenterX *)[self getAnchorForClass:BMLayoutCenterX.class selector:_cmd];
 }
 
-- (BMLayoutCenterY *)bm_centerYAnchor {
+- (BMLayoutCenterY *)bm_centerY {
     return (BMLayoutCenterY *)[self getAnchorForClass:BMLayoutCenterY.class selector:_cmd];
 }
 
-- (BMLayoutFirstBaseline *)bm_firstBaselineAnchor {
+- (BMLayoutFirstBaseline *)bm_firstBaseline {
     return (BMLayoutFirstBaseline *)[self getAnchorForClass:BMLayoutFirstBaseline.class selector:_cmd];
 }
 
-- (BMLayoutLastBaseline *)bm_lastBaselineAnchor {
+- (BMLayoutLastBaseline *)bm_lastBaseline {
     return (BMLayoutLastBaseline *)[self getAnchorForClass:BMLayoutLastBaseline.class selector:_cmd];
 }
 

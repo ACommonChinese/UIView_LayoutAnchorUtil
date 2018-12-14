@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutWidth.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutWidth() 
+
+@end
 
 @implementation BMLayoutWidth
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.widthAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.widthAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

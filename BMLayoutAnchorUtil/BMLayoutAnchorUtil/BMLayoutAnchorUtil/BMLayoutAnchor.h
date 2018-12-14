@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface BMLayoutAnchor<AnchorType> : NSObject
 
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor;
+- (NSLayoutConstraint *)equalTo:(id)value;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value;
 
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
+- (NSLayoutConstraint *)equalTo:(id)value constant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value constant:(CGFloat)c;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value constant:(CGFloat)c;
 
 @property (nonatomic, weak) UIView *view;
 

@@ -16,18 +16,18 @@
 
 #pragma mark - anchors
 
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_leadingAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_trailingAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_leftAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_rightAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_topAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_bottomAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutDimension *bm_widthAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutDimension *bm_heightAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_centerXAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_centerYAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_firstBaselineAnchor NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_lastBaselineAnchor NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_leading NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_trailing NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_left NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_right NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_top NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_bottom NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutDimension *bm_width NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutDimension *bm_height NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_centerX NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_centerY NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_firstBaseline NS_AVAILABLE_IOS(9_0);
+@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_lastBaseline NS_AVAILABLE_IOS(9_0);
 
 #pragma mark constraints
 

@@ -23,40 +23,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIView *redView = UIView.new;
+
+    UIView *redView = [[UIView alloc] init];
     redView.backgroundColor = [UIColor redColor];
     [self.view addSubview:redView];
-
+    
     // No need this:
     // self.redView.translatesAutoresizingMaskIntoConstraints = NO;
     // xxxConstraint.active = YES;
     
-    [self.redView.bm_leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:16];
+    [self.redView.bm_left equalTo:@16];
     // Note: safeAreaLayoutGuide is support after iOS11.0
-    [self.redView.bm_topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:47];
-    [self.redView.bm_rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-15];
-    [self.redView.bm_heightAnchor constraintEqualToConstant:128];
+    [self.redView.bm_top equalTo:self.view.safeAreaLayoutGuide.topAnchor constant:47];
+    [self.redView.bm_right equalTo:@(-15)];
+    [self.redView.bm_height equalTo:@128];
     
-    [self.greenView.bm_leftAnchor constraintEqualToAnchor:self.redView.leftAnchor];
-    [self.greenView.bm_topAnchor constraintEqualToAnchor:self.redView.bottomAnchor constant:10];
-    [self.greenView.bm_widthAnchor constraintEqualToAnchor:self.redView.widthAnchor multiplier:1.0];
-    [self.greenView.bm_bottomAnchor constraintEqualToAnchor:self.blackView.bottomAnchor constant:10];
+    [self.greenView.bm_left equalTo:self.redView];
+    [self.greenView.bm_top equalTo:self.redView.bottomAnchor constant:10];
+    [self.greenView.bm_width equalTo:self.redView];
+    [self.greenView.bm_bottom equalTo:self.blackView constant:10];
     
-    [self.blueView.bm_leftAnchor constraintEqualToAnchor:self.greenView.leftAnchor];
-    [self.blueView.bm_topAnchor constraintEqualToAnchor:self.greenView.bottomAnchor constant:20];
-    [self.blueView.bm_widthAnchor constraintEqualToAnchor:self.greenView.widthAnchor multiplier:1.0];
-    [self.blueView.bm_heightAnchor constraintEqualToConstant:152];
+    [self.blueView.bm_left equalTo:self.greenView];
+    [self.blueView.bm_top equalTo:self.greenView.bottomAnchor constant:20];
+    [self.blueView.bm_width equalTo:self.greenView];
+    [self.blueView.bm_height equalTo:@152];
     
-    [self.whiteView.bm_leftAnchor constraintEqualToAnchor:self.greenView.leftAnchor constant:15];
-    [self.whiteView.bm_topAnchor constraintEqualToAnchor:self.greenView.topAnchor constant:10];
-    [self.whiteView.bm_widthAnchor constraintEqualToAnchor:self.greenView.widthAnchor constant:-30];
-    [self.whiteView.bm_heightAnchor constraintEqualToConstant:100];
+    [self.whiteView.bm_left equalTo:self.greenView constant:15];
+    [self.whiteView.bm_top equalTo:self.greenView constant:10];
+    [self.whiteView.bm_width equalTo:self.greenView constant:-30];
+    [self.whiteView.bm_height equalTo:@100];
     
-    [self.blackView.bm_leftAnchor constraintEqualToAnchor:self.whiteView.leftAnchor];
-    [self.blackView.bm_topAnchor constraintEqualToAnchor:self.whiteView.bottomAnchor constant:10];
-    [self.blackView.bm_widthAnchor constraintEqualToAnchor:self.whiteView.widthAnchor multiplier:1.0];
-    [self.blackView.bm_heightAnchor constraintEqualToAnchor:self.whiteView.heightAnchor multiplier:1.0];
+    [self.blackView.bm_left equalTo:self.whiteView];
+    [self.blackView.bm_top equalTo:self.whiteView.bottomAnchor constant:10];
+    [self.blackView.bm_width equalTo:self.whiteView];
+    [self.blackView.bm_height equalTo:self.whiteView];
 }
 
 - (IBAction)test:(UIButton *)button {

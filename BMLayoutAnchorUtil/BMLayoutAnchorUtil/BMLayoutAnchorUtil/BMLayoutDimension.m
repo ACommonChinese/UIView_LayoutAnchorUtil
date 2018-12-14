@@ -11,76 +11,112 @@
 
 @implementation BMLayoutDimension
 
-- (NSLayoutConstraint *)constraintEqualToConstant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintEqualToConstant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)equalTo:(id)value {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [[self getSystemAnchor] constraintEqualToAnchor:value];
+    }
+    else if ([value isKindOfClass:[NSNumber class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintEqualToConstant:[value floatValue]];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [[self getSystemAnchor] constraintEqualToAnchor:[self getSystemAnchor:value]];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToConstant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintGreaterThanOrEqualToConstant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:value];
+    }
+    else if ([value isKindOfClass:[NSNumber class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintGreaterThanOrEqualToConstant:[value floatValue]];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:[self getSystemAnchor:value]];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintLessThanOrEqualToConstant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintLessThanOrEqualToConstant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:value];
+    }
+    else if ([value isKindOfClass:[NSNumber class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintLessThanOrEqualToConstant:[value floatValue]];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:[self getSystemAnchor:value]];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintEqualToAnchor:anchor multiplier:m];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)equalTo:(id)value multiplier:(CGFloat)m {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintEqualToAnchor:value multiplier:m];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintGreaterThanOrEqualToAnchor:anchor multiplier:m];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value multiplier:(CGFloat)m {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:value multiplier:m];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintLessThanOrEqualToAnchor:anchor multiplier:m];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value multiplier:(CGFloat)m {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintLessThanOrEqualToAnchor:value multiplier:m];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintLessThanOrEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintEqualToAnchor:anchor multiplier:m constant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)equalTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintEqualToAnchor:value multiplier:m constant:c];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m constant:c];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintGreaterThanOrEqualToAnchor:anchor multiplier:m constant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:value multiplier:m constant:c];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m constant:c];
+    }
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c {
-    BMLayoutDimension *systemAnchor = (BMLayoutDimension *)[self getSystemAnchor];
-    NSLayoutConstraint *constraint = [systemAnchor constraintLessThanOrEqualToAnchor:anchor multiplier:m constant:c];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c {
+    NSLayoutConstraint *constraint = nil;
+    if ([value isKindOfClass:[NSLayoutAnchor class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintLessThanOrEqualToAnchor:value multiplier:m constant:c];
+    }
+    else if ([value isKindOfClass:[UIView class]]) {
+        constraint = [(NSLayoutDimension *)[self getSystemAnchor] constraintLessThanOrEqualToAnchor:(id)[self getSystemAnchor:value] multiplier:m constant:c];
+    }
+    return [self addConstraint:constraint];
 }
 
 @end

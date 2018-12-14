@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutCenterY.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutCenterY() 
+
+@end
 
 @implementation BMLayoutCenterY
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.centerYAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.centerYAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

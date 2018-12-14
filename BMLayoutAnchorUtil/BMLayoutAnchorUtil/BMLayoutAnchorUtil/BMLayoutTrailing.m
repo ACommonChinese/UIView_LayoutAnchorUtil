@@ -7,7 +7,12 @@
 //
 
 #import "BMLayoutTrailing.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutTrailing() 
+
+@end
 
 @implementation BMLayoutTrailing
 

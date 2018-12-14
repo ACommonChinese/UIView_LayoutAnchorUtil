@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutHeight.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutHeight() 
+
+@end
 
 @implementation BMLayoutHeight
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.heightAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.heightAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

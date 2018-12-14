@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutTop.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutTop() 
+
+@end
 
 @implementation BMLayoutTop
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.topAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.topAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

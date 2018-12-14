@@ -14,17 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface BMLayoutDimension : BMLayoutAnchor<NSLayoutDimension *>
 
-- (NSLayoutConstraint *)constraintEqualToConstant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToConstant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToConstant:(CGFloat)c;
+- (NSLayoutConstraint *)equalTo:(id)value;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value;
 
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m;
-
-- (NSLayoutConstraint *)constraintEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(NSLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)equalTo:(id)value multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)equalTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value multiplier:(CGFloat)m constant:(CGFloat)c;
 
 @end
 

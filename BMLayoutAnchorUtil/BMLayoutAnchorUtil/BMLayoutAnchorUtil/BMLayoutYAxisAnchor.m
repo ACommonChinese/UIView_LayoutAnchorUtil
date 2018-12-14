@@ -11,33 +11,27 @@
 
 @implementation BMLayoutYAxisAnchor
 
-- (NSLayoutDimension *)anchorWithOffsetToAnchor:(NSLayoutYAxisAnchor *)otherAnchor {
-    BMLayoutYAxisAnchor *systemAnchor = (BMLayoutYAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutDimension *)anchorWithOffsetTo:(NSLayoutYAxisAnchor *)otherAnchor {
+    NSLayoutYAxisAnchor *systemAnchor = (NSLayoutYAxisAnchor *)[self getSystemAnchor];
     return [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
 }
 
-- (NSLayoutConstraint *)constraintEqualToSystemSpacingBelowAnchor:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutYAxisAnchor *systemAnchor = (BMLayoutYAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)equalToSystemSpacingBelow:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutYAxisAnchor *systemAnchor = (NSLayoutYAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintEqualToSystemSpacingBelowAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutYAxisAnchor *systemAnchor = (BMLayoutYAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)greaterThanOrEqualToSystemSpacingBelow:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutYAxisAnchor *systemAnchor = (NSLayoutYAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintLessThanOrEqualToSystemSpacingBelowAnchor:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutYAxisAnchor *systemAnchor = (BMLayoutYAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)lessThanOrEqualToSystemSpacingBelow:(NSLayoutYAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutYAxisAnchor *systemAnchor = (NSLayoutYAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintLessThanOrEqualToSystemSpacingBelowAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
 @end

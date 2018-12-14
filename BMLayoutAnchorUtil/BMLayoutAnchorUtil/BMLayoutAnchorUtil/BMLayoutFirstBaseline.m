@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutFirstBaseline.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutFirstBaseline() 
+
+@end
 
 @implementation BMLayoutFirstBaseline
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.firstBaselineAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.firstBaselineAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

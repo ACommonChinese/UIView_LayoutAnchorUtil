@@ -17,17 +17,17 @@ Obviously, it's redundancy for us.
 
 
 
-You can use this by `[yourView.bm_xxxAnchor constraint.....]` Noted, the first anchor property's prefix bm_ is required.  The later code follow bm_ is same with apple's API.
+You can use this by `[yourView.bm_xxxAnchor constraint.....]` Noted, the first anchor property's prefix bm_ is required.  The later code follow bm_ is similar to apple's API.
 
 
 
 Take an example:
 
 ```objective-c
-[self.redView.bm_leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:16];
-[self.redView.bm_topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:47];
-[self.redView.bm_rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-15];
-[self.redView.bm_heightAnchor constraintEqualToConstant:128];
+[self.greenView.bm_left equalTo:self.redView];
+[self.greenView.bm_top equalTo:self.redView.bottomAnchor constant:10];
+[self.greenView.bm_width equalTo:self.redView];
+[self.greenView.bm_bottom equalTo:self.blackView constant:10];
 ```
 
 

@@ -11,7 +11,10 @@
 @interface BMLayoutAnchor()
 
 - (NSLayoutAnchor *)getSystemAnchor;
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view;
 - (NSMutableArray *)getSystemConstrains;
+
+- (NSLayoutConstraint *)addConstraint:(NSLayoutConstraint *)constraint;
 
 @end
 

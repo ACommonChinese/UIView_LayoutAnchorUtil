@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutLeft.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutLeft() 
+
+@end
 
 @implementation BMLayoutLeft
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.leftAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.leftAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

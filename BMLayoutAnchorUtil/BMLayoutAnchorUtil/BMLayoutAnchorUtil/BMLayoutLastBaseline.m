@@ -7,12 +7,21 @@
 //
 
 #import "BMLayoutLastBaseline.h"
+#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
+
+@interface BMLayoutLastBaseline() 
+
+@end
 
 @implementation BMLayoutLastBaseline
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.lastBaselineAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.lastBaselineAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

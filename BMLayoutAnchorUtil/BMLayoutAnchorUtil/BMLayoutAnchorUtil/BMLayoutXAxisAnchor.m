@@ -13,33 +13,28 @@
 
 #pragma mark - BMLayoutAnchor
 
-- (NSLayoutConstraint *)constraintEqualToSystemSpacingAfterAnchor:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutXAxisAnchor *systemAnchor = (BMLayoutXAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)equalToSystemSpacingAfter:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutXAxisAnchor *systemAnchor = (NSLayoutXAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintEqualToSystemSpacingAfterAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutXAxisAnchor *systemAnchor = (BMLayoutXAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)greaterThanOrEqualToSystemSpacingAfter:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutXAxisAnchor *systemAnchor = (NSLayoutXAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)constraintLessThanOrEqualToSystemSpacingAfterAnchor:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
-    BMLayoutXAxisAnchor *systemAnchor = (BMLayoutXAxisAnchor *)[self getSystemAnchor];
+- (NSLayoutConstraint *)lessThanOrEqualToSystemSpacingAfter:(NSLayoutXAxisAnchor *)anchor multiplier:(CGFloat)multiplier {
+    NSLayoutXAxisAnchor *systemAnchor = (NSLayoutXAxisAnchor *)[self getSystemAnchor];
     NSLayoutConstraint *constraint = [systemAnchor constraintLessThanOrEqualToSystemSpacingAfterAnchor:anchor multiplier:multiplier];
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
+    return [self addConstraint:constraint];
 }
 
-- (NSLayoutDimension *)anchorWithOffsetToAnchor:(NSLayoutXAxisAnchor *)otherAnchor {
-    BMLayoutXAxisAnchor *systemAnchor = (BMLayoutXAxisAnchor *)[self getSystemAnchor];
-    return [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
+- (NSLayoutDimension *)anchorWithOffsetTo:(NSLayoutXAxisAnchor *)otherAnchor {
+    NSLayoutXAxisAnchor *systemAnchor = (NSLayoutXAxisAnchor *)[self getSystemAnchor];
+    NSLayoutDimension *dimension = [systemAnchor anchorWithOffsetToAnchor:otherAnchor];
+    return dimension;
 }
 
 @end
