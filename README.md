@@ -24,10 +24,10 @@ You can use this by `[yourView.bm_xxxAnchor constraint.....]` Noted, the first a
 Take an example:
 
 ```objective-c
-[self.greenView.bm_left equalTo:self.redView];
-[self.greenView.bm_top equalTo:self.redView.bottomAnchor constant:10];
-[self.greenView.bm_width equalTo:self.redView];
-[self.greenView.bm_bottom equalTo:self.blackView constant:10];
+[self.greenView.bm_left equal:self.redView];
+[self.greenView.bm_top equal:self.redView.bottomAnchor constant:10];
+[self.greenView.bm_width equal:self.redView];
+[self.greenView.bm_bottom equal:self.blackView constant:10];
 ```
 
 
