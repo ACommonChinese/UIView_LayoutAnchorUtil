@@ -14,10 +14,6 @@
 		DA2D160821BFD1520057E6CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2D160621BFD1520057E6CB /* LaunchScreen.storyboard */; };
 		DA2D160B21BFD1520057E6CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D160A21BFD1520057E6CB /* main.m */; };
 		DA2D161321BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D161221BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.m */; };
-		DA2D161721BFD1A80057E6CB /* BMLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D161621BFD1A80057E6CB /* BMLayoutAnchor.m */; };
-		DA2D161E21BFD8150057E6CB /* BMLayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D161D21BFD8150057E6CB /* BMLayoutXAxisAnchor.m */; };
-		DA2D162121BFD8330057E6CB /* BMLayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D162021BFD8330057E6CB /* BMLayoutYAxisAnchor.m */; };
-		DA2D162421BFD8420057E6CB /* BMLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D162321BFD8420057E6CB /* BMLayoutDimension.m */; };
 		DA2D163021BFE6190057E6CB /* BMLayoutLeading.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D162F21BFE6190057E6CB /* BMLayoutLeading.m */; };
 		DA2D163321BFE6300057E6CB /* BMLayoutTrailing.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D163221BFE6300057E6CB /* BMLayoutTrailing.m */; };
 		DA2D163621BFE6400057E6CB /* BMLayoutLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D163521BFE6400057E6CB /* BMLayoutLeft.m */; };
@@ -27,9 +23,16 @@
 		DA2D164221BFE68A0057E6CB /* BMLayoutWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164121BFE68A0057E6CB /* BMLayoutWidth.m */; };
 		DA2D164521BFE69F0057E6CB /* BMLayoutCenterX.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164421BFE69F0057E6CB /* BMLayoutCenterX.m */; };
 		DA2D164821BFE6B40057E6CB /* BMLayoutCenterY.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164721BFE6B40057E6CB /* BMLayoutCenterY.m */; };
-		DA2D164B21BFE6CC0057E6CB /* BMLayoutFirstBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164A21BFE6CC0057E6CB /* BMLayoutFirstBaseline.m */; };
-		DA2D164E21BFE6E40057E6CB /* BMLayoutLastBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164D21BFE6E40057E6CB /* BMLayoutLastBaseline.m */; };
 		DA2D165121BFE8150057E6CB /* BMLayoutHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D165021BFE8150057E6CB /* BMLayoutHeight.m */; };
+		DA57A07321C3E1A5007A11FB /* BMLayoutSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */; };
+		DA57A0D321C61DE9007A11FB /* BMLayoutEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A0D221C61DE9007A11FB /* BMLayoutEdge.m */; };
+		DA57A11721C77421007A11FB /* iOSAnchors.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA57A11621C77421007A11FB /* iOSAnchors.strings */; };
+		DA57A11F21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A11E21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.m */; };
+		DA57A12621C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A12521C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.m */; };
+		DA57A13621C7C022007A11FB /* BMLayoutFirstBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A13521C7C022007A11FB /* BMLayoutFirstBaseline.m */; };
+		DA57A13921C7C0E5007A11FB /* BMLayoutLastBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A13821C7C0E5007A11FB /* BMLayoutLastBaseline.m */; };
+		DA57A15421C7CFAA007A11FB /* NSArray+BMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A15321C7CFAA007A11FB /* NSArray+BMAdditions.m */; };
+		DA57A18621C8CFC7007A11FB /* BMArrayAnchorsSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A18521C8CFC7007A11FB /* BMArrayAnchorsSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,14 +48,6 @@
 		DA2D160A21BFD1520057E6CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA2D161121BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BMLayoutAnchorUtil.h"; sourceTree = "<group>"; };
 		DA2D161221BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BMLayoutAnchorUtil.m"; sourceTree = "<group>"; };
-		DA2D161521BFD1A80057E6CB /* BMLayoutAnchor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutAnchor.h; sourceTree = "<group>"; };
-		DA2D161621BFD1A80057E6CB /* BMLayoutAnchor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutAnchor.m; sourceTree = "<group>"; };
-		DA2D161C21BFD8150057E6CB /* BMLayoutXAxisAnchor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutXAxisAnchor.h; sourceTree = "<group>"; };
-		DA2D161D21BFD8150057E6CB /* BMLayoutXAxisAnchor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutXAxisAnchor.m; sourceTree = "<group>"; };
-		DA2D161F21BFD8330057E6CB /* BMLayoutYAxisAnchor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutYAxisAnchor.h; sourceTree = "<group>"; };
-		DA2D162021BFD8330057E6CB /* BMLayoutYAxisAnchor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutYAxisAnchor.m; sourceTree = "<group>"; };
-		DA2D162221BFD8420057E6CB /* BMLayoutDimension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutDimension.h; sourceTree = "<group>"; };
-		DA2D162321BFD8420057E6CB /* BMLayoutDimension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutDimension.m; sourceTree = "<group>"; };
 		DA2D162E21BFE6190057E6CB /* BMLayoutLeading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutLeading.h; sourceTree = "<group>"; };
 		DA2D162F21BFE6190057E6CB /* BMLayoutLeading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutLeading.m; sourceTree = "<group>"; };
 		DA2D163121BFE6300057E6CB /* BMLayoutTrailing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutTrailing.h; sourceTree = "<group>"; };
@@ -71,13 +66,27 @@
 		DA2D164421BFE69F0057E6CB /* BMLayoutCenterX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutCenterX.m; sourceTree = "<group>"; };
 		DA2D164621BFE6B40057E6CB /* BMLayoutCenterY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutCenterY.h; sourceTree = "<group>"; };
 		DA2D164721BFE6B40057E6CB /* BMLayoutCenterY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutCenterY.m; sourceTree = "<group>"; };
-		DA2D164921BFE6CC0057E6CB /* BMLayoutFirstBaseline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutFirstBaseline.h; sourceTree = "<group>"; };
-		DA2D164A21BFE6CC0057E6CB /* BMLayoutFirstBaseline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutFirstBaseline.m; sourceTree = "<group>"; };
-		DA2D164C21BFE6E40057E6CB /* BMLayoutLastBaseline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutLastBaseline.h; sourceTree = "<group>"; };
-		DA2D164D21BFE6E40057E6CB /* BMLayoutLastBaseline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutLastBaseline.m; sourceTree = "<group>"; };
 		DA2D164F21BFE8150057E6CB /* BMLayoutHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutHeight.h; sourceTree = "<group>"; };
 		DA2D165021BFE8150057E6CB /* BMLayoutHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutHeight.m; sourceTree = "<group>"; };
-		DA2D165221BFED7F0057E6CB /* BMLayoutAnchor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMLayoutAnchor+Private.h"; sourceTree = "<group>"; };
+		DA57A07121C3E1A5007A11FB /* BMLayoutSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutSize.h; sourceTree = "<group>"; };
+		DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutSize.m; sourceTree = "<group>"; };
+		DA57A09921C3E9EA007A11FB /* BMLayoutUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutUtilities.h; sourceTree = "<group>"; };
+		DA57A0D121C61DE9007A11FB /* BMLayoutEdge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutEdge.h; sourceTree = "<group>"; };
+		DA57A0D221C61DE9007A11FB /* BMLayoutEdge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutEdge.m; sourceTree = "<group>"; };
+		DA57A11621C77421007A11FB /* iOSAnchors.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = iOSAnchors.strings; sourceTree = "<group>"; };
+		DA57A11821C77902007A11FB /* BMLayoutAnchorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutAnchorProtocol.h; sourceTree = "<group>"; };
+		DA57A11D21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutAnchorProtocolImplement.h; sourceTree = "<group>"; };
+		DA57A11E21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutAnchorProtocolImplement.m; sourceTree = "<group>"; };
+		DA57A12421C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutDimensionProtocolImplement.h; sourceTree = "<group>"; };
+		DA57A12521C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutDimensionProtocolImplement.m; sourceTree = "<group>"; };
+		DA57A13421C7C022007A11FB /* BMLayoutFirstBaseline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutFirstBaseline.h; sourceTree = "<group>"; };
+		DA57A13521C7C022007A11FB /* BMLayoutFirstBaseline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutFirstBaseline.m; sourceTree = "<group>"; };
+		DA57A13721C7C0E5007A11FB /* BMLayoutLastBaseline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutLastBaseline.h; sourceTree = "<group>"; };
+		DA57A13821C7C0E5007A11FB /* BMLayoutLastBaseline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutLastBaseline.m; sourceTree = "<group>"; };
+		DA57A15221C7CFAA007A11FB /* NSArray+BMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+BMAdditions.h"; sourceTree = "<group>"; };
+		DA57A15321C7CFAA007A11FB /* NSArray+BMAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BMAdditions.m"; sourceTree = "<group>"; };
+		DA57A18421C8CFC7007A11FB /* BMArrayAnchorsSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMArrayAnchorsSupport.h; sourceTree = "<group>"; };
+		DA57A18521C8CFC7007A11FB /* BMArrayAnchorsSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMArrayAnchorsSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +124,7 @@
 				DA2D15FE21BFD1500057E6CB /* ViewController.h */,
 				DA2D15FF21BFD1500057E6CB /* ViewController.m */,
 				DA2D160121BFD1500057E6CB /* Main.storyboard */,
+				DA57A11621C77421007A11FB /* iOSAnchors.strings */,
 				DA2D161421BFD1720057E6CB /* BMLayoutAnchorUtil */,
 				DA2D160421BFD1520057E6CB /* Assets.xcassets */,
 				DA2D160621BFD1520057E6CB /* LaunchScreen.storyboard */,
@@ -129,15 +139,12 @@
 			children = (
 				DA2D161121BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.h */,
 				DA2D161221BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.m */,
-				DA2D161521BFD1A80057E6CB /* BMLayoutAnchor.h */,
-				DA2D161621BFD1A80057E6CB /* BMLayoutAnchor.m */,
-				DA2D165221BFED7F0057E6CB /* BMLayoutAnchor+Private.h */,
-				DA2D161C21BFD8150057E6CB /* BMLayoutXAxisAnchor.h */,
-				DA2D161D21BFD8150057E6CB /* BMLayoutXAxisAnchor.m */,
-				DA2D161F21BFD8330057E6CB /* BMLayoutYAxisAnchor.h */,
-				DA2D162021BFD8330057E6CB /* BMLayoutYAxisAnchor.m */,
-				DA2D162221BFD8420057E6CB /* BMLayoutDimension.h */,
-				DA2D162321BFD8420057E6CB /* BMLayoutDimension.m */,
+				DA57A11821C77902007A11FB /* BMLayoutAnchorProtocol.h */,
+				DA57A11D21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.h */,
+				DA57A11E21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.m */,
+				DA57A12421C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.h */,
+				DA57A12521C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.m */,
+				DA57A09921C3E9EA007A11FB /* BMLayoutUtilities.h */,
 				DA2D162E21BFE6190057E6CB /* BMLayoutLeading.h */,
 				DA2D162F21BFE6190057E6CB /* BMLayoutLeading.m */,
 				DA2D163121BFE6300057E6CB /* BMLayoutTrailing.h */,
@@ -158,10 +165,18 @@
 				DA2D164421BFE69F0057E6CB /* BMLayoutCenterX.m */,
 				DA2D164621BFE6B40057E6CB /* BMLayoutCenterY.h */,
 				DA2D164721BFE6B40057E6CB /* BMLayoutCenterY.m */,
-				DA2D164921BFE6CC0057E6CB /* BMLayoutFirstBaseline.h */,
-				DA2D164A21BFE6CC0057E6CB /* BMLayoutFirstBaseline.m */,
-				DA2D164C21BFE6E40057E6CB /* BMLayoutLastBaseline.h */,
-				DA2D164D21BFE6E40057E6CB /* BMLayoutLastBaseline.m */,
+				DA57A13421C7C022007A11FB /* BMLayoutFirstBaseline.h */,
+				DA57A13521C7C022007A11FB /* BMLayoutFirstBaseline.m */,
+				DA57A13721C7C0E5007A11FB /* BMLayoutLastBaseline.h */,
+				DA57A13821C7C0E5007A11FB /* BMLayoutLastBaseline.m */,
+				DA57A07121C3E1A5007A11FB /* BMLayoutSize.h */,
+				DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */,
+				DA57A0D121C61DE9007A11FB /* BMLayoutEdge.h */,
+				DA57A0D221C61DE9007A11FB /* BMLayoutEdge.m */,
+				DA57A15221C7CFAA007A11FB /* NSArray+BMAdditions.h */,
+				DA57A15321C7CFAA007A11FB /* NSArray+BMAdditions.m */,
+				DA57A18421C8CFC7007A11FB /* BMArrayAnchorsSupport.h */,
+				DA57A18521C8CFC7007A11FB /* BMArrayAnchorsSupport.m */,
 			);
 			path = BMLayoutAnchorUtil;
 			sourceTree = "<group>";
@@ -224,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2D160821BFD1520057E6CB /* LaunchScreen.storyboard in Resources */,
+				DA57A11721C77421007A11FB /* iOSAnchors.strings in Resources */,
 				DA2D160521BFD1520057E6CB /* Assets.xcassets in Resources */,
 				DA2D160321BFD1500057E6CB /* Main.storyboard in Resources */,
 			);
@@ -236,25 +252,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA57A13621C7C022007A11FB /* BMLayoutFirstBaseline.m in Sources */,
 				DA2D163621BFE6400057E6CB /* BMLayoutLeft.m in Sources */,
+				DA57A0D321C61DE9007A11FB /* BMLayoutEdge.m in Sources */,
 				DA2D164521BFE69F0057E6CB /* BMLayoutCenterX.m in Sources */,
 				DA2D163C21BFE6610057E6CB /* BMLayoutTop.m in Sources */,
 				DA2D163921BFE64E0057E6CB /* BMLayoutRight.m in Sources */,
 				DA2D161321BFD16A0057E6CB /* UIView+BMLayoutAnchorUtil.m in Sources */,
-				DA2D162421BFD8420057E6CB /* BMLayoutDimension.m in Sources */,
-				DA2D161E21BFD8150057E6CB /* BMLayoutXAxisAnchor.m in Sources */,
+				DA57A11F21C77B1E007A11FB /* BMLayoutAnchorProtocolImplement.m in Sources */,
+				DA57A15421C7CFAA007A11FB /* NSArray+BMAdditions.m in Sources */,
 				DA2D160021BFD1500057E6CB /* ViewController.m in Sources */,
-				DA2D162121BFD8330057E6CB /* BMLayoutYAxisAnchor.m in Sources */,
 				DA2D163021BFE6190057E6CB /* BMLayoutLeading.m in Sources */,
 				DA2D163321BFE6300057E6CB /* BMLayoutTrailing.m in Sources */,
 				DA2D160B21BFD1520057E6CB /* main.m in Sources */,
-				DA2D164E21BFE6E40057E6CB /* BMLayoutLastBaseline.m in Sources */,
+				DA57A12621C79E2F007A11FB /* BMLayoutDimensionProtocolImplement.m in Sources */,
 				DA2D163F21BFE6740057E6CB /* BMLayoutBottom.m in Sources */,
-				DA2D161721BFD1A80057E6CB /* BMLayoutAnchor.m in Sources */,
 				DA2D164221BFE68A0057E6CB /* BMLayoutWidth.m in Sources */,
 				DA2D15FD21BFD1500057E6CB /* AppDelegate.m in Sources */,
 				DA2D165121BFE8150057E6CB /* BMLayoutHeight.m in Sources */,
-				DA2D164B21BFE6CC0057E6CB /* BMLayoutFirstBaseline.m in Sources */,
+				DA57A13921C7C0E5007A11FB /* BMLayoutLastBaseline.m in Sources */,
+				DA57A18621C8CFC7007A11FB /* BMArrayAnchorsSupport.m in Sources */,
+				DA57A07321C3E1A5007A11FB /* BMLayoutSize.m in Sources */,
 				DA2D164821BFE6B40057E6CB /* BMLayoutCenterY.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

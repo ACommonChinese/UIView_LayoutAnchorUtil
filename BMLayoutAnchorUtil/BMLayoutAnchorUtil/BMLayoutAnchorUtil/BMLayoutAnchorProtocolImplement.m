@@ -1,42 +1,34 @@
 //
-//  BMLayoutAnchor.m
+//  BMLayoutAnchorProtocolImplement.m
 //  BMLayoutAnchorUtil
 //
-//  Created by liuweizhen on 2018/12/11.
-//  Copyright © 2018 liuxing8807@126.com All rights reserved.
+//  Created by liuweizhen on 2018/12/17.
+//  Copyright © 2018 banma. All rights reserved.
 //
 
-#import "BMLayoutAnchor.h"
-#import "BMLayoutAnchor+Private.h"
-#import "UIView+BMLayoutAnchorUtil.h"
+#import "BMLayoutAnchorProtocolImplement.h"
 
-@interface BMLayoutAnchor()
+@implementation BMLayoutAnchorProtocolImplement
 
-@end
-
-@implementation BMLayoutAnchor
-
-- (NSLayoutConstraint *)equalTo:(id)value {
+- (NSLayoutConstraint *)equal:(id)value {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:[NSLayoutAnchor class]]) {
         constraint = [[self getSystemAnchor] constraintEqualToAnchor:value];
     }
     else if ([value isKindOfClass:[NSNumber class]]) {
-        constraint = [[self getSystemAnchor] constraintEqualToAnchor:[self getSystemAnchor:self.view.superview] constant:[value floatValue]];
+        constraint = [[self getSystemAnchor] constraintEqualToAnchor:[self getSystemAnchor:self.view.superview] constant:[value doubleValue]];
     }
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintEqualToAnchor:[self getSystemAnchor:value]];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)addConstraint:(NSLayoutConstraint *)constraint {
-    constraint.active = YES;
-    [[self getSystemConstrains] addObject:constraint];
-    return constraint;
-}
-
-- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value {
+- (NSLayoutConstraint *)greaterEqual:(id)value {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:NSLayoutAnchor.class]) {
         constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:value];
@@ -47,10 +39,14 @@
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:[self getSystemAnchor:value]];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value {
+- (NSLayoutConstraint *)lessEqual:(id)value {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:NSLayoutAnchor.class]) {
         constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:value];
@@ -61,10 +57,14 @@
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:[self getSystemAnchor:value]];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)equalTo:(id)value constant:(CGFloat)c {
+- (NSLayoutConstraint *)equal:(id)value constant:(CGFloat)c {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:NSLayoutAnchor.class]) {
         constraint = [[self getSystemAnchor] constraintEqualToAnchor:value constant:c];
@@ -72,10 +72,14 @@
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintEqualToAnchor:[self getSystemAnchor:value] constant:c];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)greaterThanOrEqualTo:(id)value constant:(CGFloat)c {
+- (NSLayoutConstraint *)greaterEqual:(id)value constant:(CGFloat)c {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:NSLayoutAnchor.class]) {
         constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:value constant:c];
@@ -83,10 +87,14 @@
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintGreaterThanOrEqualToAnchor:[self getSystemAnchor:value] constant:c];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (NSLayoutConstraint *)lessThanOrEqualTo:(id)value constant:(CGFloat)c {
+- (NSLayoutConstraint *)lessEqual:(id)value constant:(CGFloat)c {
     NSLayoutConstraint *constraint = nil;
     if ([value isKindOfClass:NSLayoutAnchor.class]) {
         constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:value constant:c];
@@ -94,22 +102,29 @@
     else if ([value isKindOfClass:[UIView class]]) {
         constraint = [[self getSystemAnchor] constraintLessThanOrEqualToAnchor:[self getSystemAnchor:value] constant:c];
     }
+    else {
+        BMLayoutThrowTypeInvalidException
+    }
+    
     return [self addConstraint:constraint];
 }
 
-- (instancetype)getSystemAnchor {
-    NSAssert(NO, @"getSystemAnchor should be implemnte by subclass");
-    return nil;
+- (NSLayoutAnchor *)getSystemAnchor {
+    BMLayoutThrowException(@"getSystemAnchor should be implement by subclass");
 }
 
-- (instancetype)getSystemConstrains {
-    NSAssert(NO, @"getSystemConstrains should be implemnte by subclass");
-    return nil;
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    BMLayoutThrowException(@"getSystemAnchor: should be implement by subclass");
 }
 
-- (instancetype)getSystemAnchor:(UIView *)view {
-    NSAssert(NO, @"getSystemAnchor: should be implemnte by subclass");
-    return nil;
+- (NSMutableArray *)getSystemConstrains {
+    BMLayoutThrowException(@"getSystemConstrains should be implement by subclass");
+}
+
+- (NSLayoutConstraint *)addConstraint:(NSLayoutConstraint *)constraint {
+    constraint.active = YES;
+    [[self getSystemConstrains] addObject:constraint];
+    return constraint;
 }
 
 @end

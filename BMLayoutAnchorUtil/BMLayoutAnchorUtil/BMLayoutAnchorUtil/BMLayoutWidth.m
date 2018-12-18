@@ -7,7 +7,6 @@
 //
 
 #import "BMLayoutWidth.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
 
 @interface BMLayoutWidth() 

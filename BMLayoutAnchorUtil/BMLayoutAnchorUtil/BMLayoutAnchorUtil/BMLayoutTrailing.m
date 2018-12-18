@@ -7,7 +7,6 @@
 //
 
 #import "BMLayoutTrailing.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
 
 @interface BMLayoutTrailing() 
@@ -18,6 +17,10 @@
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.trailingAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.trailingAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

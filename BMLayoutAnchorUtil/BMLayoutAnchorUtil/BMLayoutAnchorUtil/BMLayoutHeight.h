@@ -6,11 +6,11 @@
 //  Copyright © 2018 liuxing8807@126.com All rights reserved.
 //
 
-#import "BMLayoutDimension.h"
+#import "BMLayoutDimensionProtocolImplement.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BMLayoutHeight : BMLayoutDimension
+@interface BMLayoutHeight : BMLayoutDimensionProtocolImplement <BMLayoutAnchorHeightProtocol>
 
 @end
 

@@ -40,11 +40,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.85098039219999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-Ja-NMh">
-                                <rect key="frame" x="16" y="423" width="343" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLz-Lg-pxB">
                                 <rect key="frame" x="8" y="609" width="359" height="50"/>
                                 <constraints>
@@ -55,6 +50,20 @@
                                     <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXm-1V-JZm"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-Ja-NMh">
+                                <rect key="frame" x="16" y="411" width="343" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18w-Ek-ga2">
+                                        <rect key="frame" x="8" y="8" width="327" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,13 +77,14 @@
                         <outlet property="blackView" destination="bCM-VV-WQ2" id="l5z-mY-UKy"/>
                         <outlet property="blueView" destination="hDi-Ja-NMh" id="3Al-gF-mqh"/>
                         <outlet property="greenView" destination="e4R-cV-cPg" id="PtD-9M-fpn"/>
+                        <outlet property="label" destination="18w-Ek-ga2" id="Toi-MB-gZa"/>
                         <outlet property="redView" destination="iNW-BX-dG8" id="i8n-3u-bx1"/>
                         <outlet property="whiteView" destination="aI1-td-Y5i" id="hw0-KS-tbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338.39999999999998" y="77.811094452773617"/>
+            <point key="canvasLocation" x="-359.19999999999999" y="-59.820089955022496"/>
         </scene>
     </scenes>
 </document>

@@ -7,12 +7,7 @@
 //
 
 #import "BMLayoutBottom.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
-
-@interface BMLayoutBottom() 
-
-@end
 
 @implementation BMLayoutBottom
 

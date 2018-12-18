@@ -7,12 +7,7 @@
 //
 
 #import "BMLayoutCenterY.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
-
-@interface BMLayoutCenterY() 
-
-@end
 
 @implementation BMLayoutCenterY
 

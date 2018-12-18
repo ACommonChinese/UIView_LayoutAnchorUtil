@@ -7,55 +7,69 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BMLayoutXAxisAnchor.h"
-#import "BMLayoutYAxisAnchor.h"
-#import "BMLayoutDimension.h"
-#import "BMLayoutXAxisAnchor.h"
+#import "BMLayoutLeading.h"
+#import "BMLayoutTrailing.h"
+#import "BMLayoutLeft.h"
+#import "BMLayoutRight.h"
+#import "BMLayoutTop.h"
+#import "BMLayoutBottom.h"
+#import "BMLayoutWidth.h"
+#import "BMLayoutHeight.h"
+#import "BMLayoutCenterX.h"
+#import "BMLayoutCenterY.h"
+#import "BMLayoutFirstBaseline.h"
+#import "BMLayoutLastBaseline.h"
+#import "BMLayoutSize.h"
+#import "BMLayoutEdge.h"
+#import "BMLayoutUtilities.h"
+#import "NSArray+BMAdditions.h"
 
 @interface UIView (BMLayoutAnchorUtil)
 
 #pragma mark - anchors
 
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_leading NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_trailing NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_left NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_right NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_top NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_bottom NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutDimension *bm_width NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutDimension *bm_height NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutXAxisAnchor *bm_centerX NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_centerY NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_firstBaseline NS_AVAILABLE_IOS(9_0);
-@property (nonatomic,readonly,strong) BMLayoutYAxisAnchor *bm_lastBaseline NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutLeading *bm_leading NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutTrailing *bm_trailing NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutLeft *bm_left NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutRight *bm_right NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutTop *bm_top NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutBottom *bm_bottom NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutWidth *bm_width NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutHeight *bm_height NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutCenterX *bm_centerX NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutCenterY *bm_centerY NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutFirstBaseline *bm_firstBaseline NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutLastBaseline *bm_lastBaseline NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutSize *bm_size NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) BMLayoutEdge *bm_edge NS_AVAILABLE_IOS(9_0);
 
 #pragma mark constraints
 
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_leadingConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_trailingConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_leftConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_rightConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_topConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_bottomConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_widthConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_heightConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_centerXConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_centerYConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_firstBaselineConstraint;
-@property (nonatomic,readonly,strong) NSLayoutConstraint *bm_lastBaselineConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_leadingConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_trailingConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_leftConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_rightConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_topConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_bottomConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_widthConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_heightConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_centerXConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_centerYConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_firstBaselineConstraint;
+@property (nonatomic, readonly, strong) NSLayoutConstraint *bm_lastBaselineConstraint;
 
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_leadingConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_trailingConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_leftConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_rightConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_topConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_bottomConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_widthConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_heightConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_centerXConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_centerYConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_firstBaselineConstraints;
-@property (nonatomic,readonly,strong) NSArray<NSLayoutConstraint *> *bm_lastBaselineConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_leadingConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_trailingConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_leftConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_rightConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_topConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_bottomConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_widthConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_heightConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_centerXConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_centerYConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_firstBaselineConstraints;
+@property (nonatomic, readonly, strong) NSArray<NSLayoutConstraint *> *bm_lastBaselineConstraints;
 
 #pragma mark - add constraints
 
@@ -129,5 +143,9 @@
 - (void)bm_replaceCenterYConstraint:(NSLayoutConstraint *)constraint;
 - (void)bm_replaceFirstBaselineConstraint:(NSLayoutConstraint *)constraint;
 - (void)bm_replaceLastBaselineConstraint:(NSLayoutConstraint *)constraint;
+
+#pragma mark - for distribute views
+
+- (instancetype)bm_closestCommonSuperview:(UIView *)view;
 
 @end

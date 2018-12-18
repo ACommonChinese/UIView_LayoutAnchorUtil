@@ -8,80 +8,75 @@
 
 #import "UIView+BMLayoutAnchorUtil.h"
 #import <objc/runtime.h>
-#import "BMLayoutLeading.h"
-#import "BMLayoutTrailing.h"
-#import "BMLayoutLeft.h"
-#import "BMLayoutRight.h"
-#import "BMLayoutTop.h"
-#import "BMLayoutBottom.h"
-#import "BMLayoutWidth.h"
-#import "BMLayoutHeight.h"
-#import "BMLayoutCenterX.h"
-#import "BMLayoutCenterY.h"
-#import "BMLayoutFirstBaseline.h"
-#import "BMLayoutLastBaseline.h"
 
 @implementation UIView (BMLayoutAnchorUtil)
 
 #pragma mark - anchors
 
 - (BMLayoutLeading *)bm_leading {
-    return (BMLayoutLeading *)[self getAnchorForClass:BMLayoutLeading.class selector:_cmd];
+    return (BMLayoutLeading *)[self bm_getObjectForClass:BMLayoutLeading.class selector:_cmd];
 }
 
 - (BMLayoutTrailing *)bm_trailing {
-    return (BMLayoutTrailing *)[self getAnchorForClass:BMLayoutTrailing.class selector:_cmd];
+    return (BMLayoutTrailing *)[self bm_getObjectForClass:BMLayoutTrailing.class selector:_cmd];
 }
 
 - (BMLayoutLeft *)bm_left {
-    return (BMLayoutLeft *)[self getAnchorForClass:BMLayoutLeft.class selector:_cmd];
+    return (BMLayoutLeft *)[self bm_getObjectForClass:BMLayoutLeft.class selector:_cmd];
 }
 
 - (BMLayoutRight *)bm_right {
-    return (BMLayoutRight *)[self getAnchorForClass:BMLayoutRight.class selector:_cmd];
+    return (BMLayoutRight *)[self bm_getObjectForClass:BMLayoutRight.class selector:_cmd];
 }
 
 - (BMLayoutTop *)bm_top {
-    return (BMLayoutTop *)[self getAnchorForClass:BMLayoutTop.class selector:_cmd];
+    return (BMLayoutTop *)[self bm_getObjectForClass:BMLayoutTop.class selector:_cmd];
 }
 
 - (BMLayoutBottom *)bm_bottom {
-    return (BMLayoutBottom *)[self getAnchorForClass:BMLayoutBottom.class selector:_cmd];
+    return (BMLayoutBottom *)[self bm_getObjectForClass:BMLayoutBottom.class selector:_cmd];
 }
 
 - (BMLayoutWidth *)bm_width {
-    return (BMLayoutWidth *)[self getAnchorForClass:BMLayoutWidth.class selector:_cmd];
+    return (BMLayoutWidth *)[self bm_getObjectForClass:BMLayoutWidth.class selector:_cmd];
 }
 
 - (BMLayoutHeight *)bm_height {
-    return (BMLayoutHeight *)[self getAnchorForClass:BMLayoutHeight.class selector:_cmd];
+    return (BMLayoutHeight *)[self bm_getObjectForClass:BMLayoutHeight.class selector:_cmd];
 }
 
 - (BMLayoutCenterX *)bm_centerX {
-    return (BMLayoutCenterX *)[self getAnchorForClass:BMLayoutCenterX.class selector:_cmd];
+    return (BMLayoutCenterX *)[self bm_getObjectForClass:BMLayoutCenterX.class selector:_cmd];
 }
 
 - (BMLayoutCenterY *)bm_centerY {
-    return (BMLayoutCenterY *)[self getAnchorForClass:BMLayoutCenterY.class selector:_cmd];
+    return (BMLayoutCenterY *)[self bm_getObjectForClass:BMLayoutCenterY.class selector:_cmd];
 }
 
 - (BMLayoutFirstBaseline *)bm_firstBaseline {
-    return (BMLayoutFirstBaseline *)[self getAnchorForClass:BMLayoutFirstBaseline.class selector:_cmd];
+    return (BMLayoutFirstBaseline *)[self bm_getObjectForClass:BMLayoutFirstBaseline.class selector:_cmd];
 }
 
 - (BMLayoutLastBaseline *)bm_lastBaseline {
-    return (BMLayoutLastBaseline *)[self getAnchorForClass:BMLayoutLastBaseline.class selector:_cmd];
+    return (BMLayoutLastBaseline *)[self bm_getObjectForClass:BMLayoutLastBaseline.class selector:_cmd];
 }
 
-- (BMLayoutAnchor *)getAnchorForClass:(Class)anchorClass selector:(SEL)selector {
-    BMLayoutAnchor *anchor = objc_getAssociatedObject(self, selector);
-    if (!anchor) {
-        anchor = (BMLayoutAnchor *)[[anchorClass alloc] init];
-        anchor.view = self;
+- (BMLayoutSize *)bm_size {
+    return (BMLayoutSize *)[self bm_getObjectForClass:BMLayoutSize.class selector:_cmd];
+}
+
+- (BMLayoutEdge *)bm_edge {
+    return (BMLayoutEdge *)[self bm_getObjectForClass:BMLayoutEdge.class selector:_cmd];
+}
+
+- (id<BMLayoutAnchorAttachViewProtocol>)bm_getObjectForClass:(Class)anchorClass selector:(SEL)selector {
+    id<BMLayoutAnchorAttachViewProtocol> attachObject = objc_getAssociatedObject(self, selector);
+    if (!attachObject) {
+        attachObject = [[anchorClass alloc] init];
+        attachObject.view = self;
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        objc_setAssociatedObject(self, selector, anchor, OBJC_ASSOCIATION_RETAIN);
     }
-    return anchor;
+    return attachObject;
 }
 
 #pragma mark constraints
@@ -500,6 +495,25 @@
 - (void)bm_replaceLastBaselineConstraint:(NSLayoutConstraint *)constraint {
     [self bm_deleteLastBaselineConstraint];
     [self bm_addLastBaselineConstraint:constraint];
+}
+
+#pragma mark - for distribute views
+
+- (instancetype)bm_closestCommonSuperview:(UIView *)view {
+    UIView *closestCommonSuperview = nil;
+    
+    UIView *secondViewSuperview = view;
+    while (!closestCommonSuperview && secondViewSuperview) {
+        UIView *firstViewSuperview = self;
+        while (!closestCommonSuperview && firstViewSuperview) {
+            if (secondViewSuperview == firstViewSuperview) {
+                closestCommonSuperview = secondViewSuperview;
+            }
+            firstViewSuperview = firstViewSuperview.superview;
+        }
+        secondViewSuperview = secondViewSuperview.superview;
+    }
+    return closestCommonSuperview;
 }
 
 @end

@@ -7,17 +7,16 @@
 //
 
 #import "BMLayoutLeading.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
-
-@interface BMLayoutLeading()
-
-@end
 
 @implementation BMLayoutLeading
 
 - (NSLayoutAnchor *)getSystemAnchor {
     return self.view.leadingAnchor;
+}
+
+- (NSLayoutAnchor *)getSystemAnchor:(UIView *)view {
+    return view.leadingAnchor;
 }
 
 - (NSMutableArray *)getSystemConstrains {

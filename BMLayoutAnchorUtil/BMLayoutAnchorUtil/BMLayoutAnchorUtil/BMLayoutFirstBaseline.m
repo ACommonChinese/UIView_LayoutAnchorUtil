@@ -1,18 +1,13 @@
 //
-//  BMLayoutFirstBaseline.m
+//  BMLayoutFirstBaselineAnchor.m
 //  BMLayoutAnchorUtil
 //
-//  Created by liuweizhen on 2018/12/11.
-//  Copyright © 2018 liuxing8807@126.com All rights reserved.
+//  Created by liuweizhen on 2018/12/17.
+//  Copyright © 2018 banma. All rights reserved.
 //
 
 #import "BMLayoutFirstBaseline.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
-
-@interface BMLayoutFirstBaseline() 
-
-@end
 
 @implementation BMLayoutFirstBaseline
 

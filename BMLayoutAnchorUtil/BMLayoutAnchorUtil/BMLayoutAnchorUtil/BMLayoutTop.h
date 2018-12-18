@@ -6,11 +6,11 @@
 //  Copyright © 2018 liuxing8807@126.com All rights reserved.
 //
 
-#import "BMLayoutYAxisAnchor.h"
+#import "BMLayoutAnchorProtocolImplement.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BMLayoutTop : BMLayoutYAxisAnchor
+@interface BMLayoutTop : BMLayoutAnchorProtocolImplement <BMLayoutAnchorTopProtocol>
 
 @end
 

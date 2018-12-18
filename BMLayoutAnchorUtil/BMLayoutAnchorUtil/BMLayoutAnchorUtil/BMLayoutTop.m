@@ -7,7 +7,6 @@
 //
 
 #import "BMLayoutTop.h"
-#import "BMLayoutAnchor+Private.h"
 #import "UIView+BMLayoutAnchorUtil.h"
 
 @interface BMLayoutTop() 
