@@ -23,4 +23,8 @@
     return (NSMutableArray *)self.view.bm_bottomConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeBottom;
+}
+
 @end

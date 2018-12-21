@@ -24,6 +24,7 @@
 		DA2D164521BFE69F0057E6CB /* BMLayoutCenterX.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164421BFE69F0057E6CB /* BMLayoutCenterX.m */; };
 		DA2D164821BFE6B40057E6CB /* BMLayoutCenterY.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D164721BFE6B40057E6CB /* BMLayoutCenterY.m */; };
 		DA2D165121BFE8150057E6CB /* BMLayoutHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D165021BFE8150057E6CB /* BMLayoutHeight.m */; };
+		DA30196D21CBAAEF0091042A /* BMLayoutComposed.m in Sources */ = {isa = PBXBuildFile; fileRef = DA30196C21CBAAEF0091042A /* BMLayoutComposed.m */; };
 		DA57A07321C3E1A5007A11FB /* BMLayoutSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */; };
 		DA57A0D321C61DE9007A11FB /* BMLayoutEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = DA57A0D221C61DE9007A11FB /* BMLayoutEdge.m */; };
 		DA57A11721C77421007A11FB /* iOSAnchors.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA57A11621C77421007A11FB /* iOSAnchors.strings */; };
@@ -68,6 +69,8 @@
 		DA2D164721BFE6B40057E6CB /* BMLayoutCenterY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutCenterY.m; sourceTree = "<group>"; };
 		DA2D164F21BFE8150057E6CB /* BMLayoutHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutHeight.h; sourceTree = "<group>"; };
 		DA2D165021BFE8150057E6CB /* BMLayoutHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutHeight.m; sourceTree = "<group>"; };
+		DA30196B21CBAAEF0091042A /* BMLayoutComposed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutComposed.h; sourceTree = "<group>"; };
+		DA30196C21CBAAEF0091042A /* BMLayoutComposed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutComposed.m; sourceTree = "<group>"; };
 		DA57A07121C3E1A5007A11FB /* BMLayoutSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutSize.h; sourceTree = "<group>"; };
 		DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLayoutSize.m; sourceTree = "<group>"; };
 		DA57A09921C3E9EA007A11FB /* BMLayoutUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMLayoutUtilities.h; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				DA57A13521C7C022007A11FB /* BMLayoutFirstBaseline.m */,
 				DA57A13721C7C0E5007A11FB /* BMLayoutLastBaseline.h */,
 				DA57A13821C7C0E5007A11FB /* BMLayoutLastBaseline.m */,
+				DA30196B21CBAAEF0091042A /* BMLayoutComposed.h */,
+				DA30196C21CBAAEF0091042A /* BMLayoutComposed.m */,
 				DA57A07121C3E1A5007A11FB /* BMLayoutSize.h */,
 				DA57A07221C3E1A5007A11FB /* BMLayoutSize.m */,
 				DA57A0D121C61DE9007A11FB /* BMLayoutEdge.h */,
@@ -271,6 +276,7 @@
 				DA2D15FD21BFD1500057E6CB /* AppDelegate.m in Sources */,
 				DA2D165121BFE8150057E6CB /* BMLayoutHeight.m in Sources */,
 				DA57A13921C7C0E5007A11FB /* BMLayoutLastBaseline.m in Sources */,
+				DA30196D21CBAAEF0091042A /* BMLayoutComposed.m in Sources */,
 				DA57A18621C8CFC7007A11FB /* BMArrayAnchorsSupport.m in Sources */,
 				DA57A07321C3E1A5007A11FB /* BMLayoutSize.m in Sources */,
 				DA2D164821BFE6B40057E6CB /* BMLayoutCenterY.m in Sources */,

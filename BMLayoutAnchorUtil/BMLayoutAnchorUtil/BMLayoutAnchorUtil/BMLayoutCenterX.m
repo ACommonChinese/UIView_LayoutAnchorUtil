@@ -23,4 +23,8 @@
     return (NSMutableArray *)self.view.bm_centerXConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeCenterX;
+}
+
 @end

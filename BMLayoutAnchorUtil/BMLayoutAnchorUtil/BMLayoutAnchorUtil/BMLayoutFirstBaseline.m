@@ -23,4 +23,8 @@
     return (NSMutableArray *)self.view.bm_firstBaselineConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeFirstBaseline;
+}
+
 @end

@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol BMLayoutAnchorAttributeProtocol <NSObject>
+
+@property (nonatomic, assign, readonly) NSLayoutAttribute layoutAttribute;
+
+@end
+
 @protocol BMLayoutAnchorProtocol <NSObject>
 
 - (NSLayoutConstraint *)equal:(id)value;
@@ -77,6 +83,30 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol BMLayoutAnchorEdgeProtocol <NSObject>
 
 - (NSArray<NSLayoutConstraint *> *)equal:(id)value;
+
+@end
+
+@protocol BMLayoutAnchorComposedProtocol <NSObject>
+
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> leading NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> trailing NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> left NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> right NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> top NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> bottom NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> width NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> height NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> centerX NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> centerY NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> firstBaseline NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, readonly, strong) id<BMLayoutAnchorComposedProtocol> lastBaseline NS_AVAILABLE_IOS(9_0);
+
+- (NSLayoutConstraint *)equal:(id)value;
+- (NSLayoutConstraint *)greaterEqual:(id)value;
+- (NSLayoutConstraint *)lessEqual:(id)value;
+- (NSLayoutConstraint *)equal:(id)value constant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterEqual:(id)value constant:(CGFloat)c;
+- (NSLayoutConstraint *)lessEqual:(id)value constant:(CGFloat)c;
 
 @end
 

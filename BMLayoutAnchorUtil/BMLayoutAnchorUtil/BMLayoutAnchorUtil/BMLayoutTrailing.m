@@ -27,4 +27,8 @@
     return (NSMutableArray *)self.view.bm_trailingConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeTrailing;
+}
+
 @end

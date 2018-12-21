@@ -27,4 +27,8 @@
     return (NSMutableArray *)self.view.bm_topConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeTop;
+}
+
 @end

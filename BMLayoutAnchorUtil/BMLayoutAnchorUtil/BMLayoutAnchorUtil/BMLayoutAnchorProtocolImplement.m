@@ -7,6 +7,7 @@
 //
 
 #import "BMLayoutAnchorProtocolImplement.h"
+#import "UIView+BMLayoutAnchorUtil.h"
 
 @implementation BMLayoutAnchorProtocolImplement
 
@@ -125,6 +126,66 @@
     constraint.active = YES;
     [[self getSystemConstrains] addObject:constraint];
     return constraint;
+}
+
+#pragma mark - <BMLayoutAnchorAttributeProtocol>
+
+- (NSLayoutAttribute)layoutAttribute {
+    BMLayoutThrowException(@"should be implement by subclass")
+}
+
+#pragma mark - <BMLayoutAnchorComposedProtocol>
+
+- (id<BMLayoutAnchorComposedProtocol>)getComposedProtocolImplementWithAttribute:(NSLayoutAttribute)layoutAttribute {
+    return [[BMLayoutComposed alloc] initWithTargetView:self.view composedAttributes:@[@([self layoutAttribute]), @(layoutAttribute)]];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)leading {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeLeading];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)trailing {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeTrailing];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)left {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeLeft];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)right {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeRight];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)top {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeTop];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)bottom {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeBottom];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)width {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeWidth];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)height {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeHeight];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)centerX {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeCenterX];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)centerY {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeCenterY];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)firstBaseline {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeFirstBaseline];
+}
+
+- (id<BMLayoutAnchorComposedProtocol>)lastBaseline {
+    return [self getComposedProtocolImplementWithAttribute:NSLayoutAttributeLastBaseline];
 }
 
 @end

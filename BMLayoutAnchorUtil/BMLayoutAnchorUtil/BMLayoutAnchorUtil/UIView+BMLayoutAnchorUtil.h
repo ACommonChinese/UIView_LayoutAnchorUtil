@@ -23,6 +23,7 @@
 #import "BMLayoutEdge.h"
 #import "BMLayoutUtilities.h"
 #import "NSArray+BMAdditions.h"
+#import "BMLayoutComposed.h"
 
 @interface UIView (BMLayoutAnchorUtil)
 

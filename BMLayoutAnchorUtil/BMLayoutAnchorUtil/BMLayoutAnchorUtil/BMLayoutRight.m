@@ -23,4 +23,8 @@
     return (NSMutableArray *)self.view.bm_rightConstraints;
 }
 
+- (NSLayoutAttribute)layoutAttribute {
+    return NSLayoutAttributeRight;
+}
+
 @end

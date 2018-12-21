@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BMLayoutAnchorProtocolImplement : NSObject <BMLayoutAnchorProtocol, BMLayoutAnchorAttachViewProtocol>
+@interface BMLayoutAnchorProtocolImplement : NSObject <BMLayoutAnchorProtocol, BMLayoutAnchorAttachViewProtocol, BMLayoutAnchorComposedProtocol, BMLayoutAnchorAttributeProtocol>
 
 @property (nonatomic, weak) UIView *view;
 

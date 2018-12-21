@@ -36,31 +36,24 @@
     [self.redView.bm_left equal:@16];
     // Note: safeAreaLayoutGuide is support after iOS11.0
     [self.redView.bm_top equal:self.view.safeAreaLayoutGuide.topAnchor constant:47];
-    [self.redView.bm_right equal:@(-15)];
-    [self.redView.bm_height equal:@128];
-
-    [self.greenView.bm_left equal:self.redView];
+    [self.redView.bm_right.height equal:@[@(-15), @128]];
+    [self.greenView.bm_left.width equal:self.redView];
+    
     [self.greenView.bm_top equal:self.redView.bottomAnchor constant:10];
-    [self.greenView.bm_width equal:self.redView];
     [self.greenView.bm_bottom equal:self.blackView constant:10];
     
-    [self.blueView.bm_left equal:self.greenView];
     [self.blueView.bm_top equal:self.greenView.bottomAnchor constant:20];
-    [self.blueView.bm_width equal:self.greenView];
-    [self.blueView.bm_height equal:@352];
+    [self.blueView.bm_left.width.height equal:@[self.greenView, self.greenView, @352]];
     
     [self.whiteView.bm_left equal:self.greenView constant:15];
     [self.whiteView.bm_top equal:self.greenView constant:10];
     [self.whiteView.bm_width equal:self.greenView constant:-30];
     [self.whiteView.bm_height equal:@100];
 
-    [self.blackView.bm_left equal:self.whiteView];
     [self.blackView.bm_top equal:self.whiteView.bottomAnchor constant:10];
-    [self.blackView.bm_size equal:self.whiteView];
+    [self.blackView.bm_left.width.height equal:self.whiteView];
     
-    [self.label.bm_left equal:@(10)];
-    [self.label.bm_top equal:@(10)];
-    [self.label.bm_right equal:@(-10)];
+    [self.label.bm_left.top.right equal:@[@(10), @(10), @(-10)]];
     self.label.font = [UIFont systemFontOfSize:25.0];
     self.label.numberOfLines = 0;
     self.label.backgroundColor = [UIColor yellowColor];
